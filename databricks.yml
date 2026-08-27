@@ -1,0 +1,28 @@
+bundle:
+  name: engenharia_dados_veiculos_subtraidos_sp
+
+variables:
+  catalog:
+    description: Catálogo do Unity Catalog usado pelo projeto
+    default: workspace
+  environment:
+    description: Ambiente lógico de execução
+    default: hml
+
+targets:
+  hml:
+    default: true
+    mode: development
+    variables:
+      catalog: workspace
+      environment: hml
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+
+  prod:
+    mode: production
+    variables:
+      catalog: workspace
+      environment: prod
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}

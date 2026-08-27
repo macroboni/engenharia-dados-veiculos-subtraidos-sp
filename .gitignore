@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Ferramentas locais
+.env
+.databricks/
+.vscode/
+.idea/
+
+# Dados brutos e sensíveis
+data/
+*.xlsx
+*.xls
+*.zip
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
