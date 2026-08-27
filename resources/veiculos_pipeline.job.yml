@@ -1,0 +1,21 @@
+resources:
+  jobs:
+    veiculos_subtraidos_pipeline:
+      name: "[${bundle.target}] pipeline_veiculos_subtraidos_sp"
+      description: Ingestão incremental da Landing Zone para a camada Bronze
+      max_concurrent_runs: 1
+      timeout_seconds: 7200
+
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: environment
+          default: ${var.environment}
+
+      tasks:
+        - task_key: landing_para_bronze
+          notebook_task:
+            notebook_path: ../notebooks/01_landing_para_bronze.py
+            base_parameters:
+              catalog: ${var.catalog}
+              environment: ${var.environment}

@@ -1,6 +1,9 @@
 bundle:
   name: engenharia_dados_veiculos_subtraidos_sp
 
+include:
+  - resources/*.yml
+
 variables:
   catalog:
     description: Catálogo do Unity Catalog usado pelo projeto
